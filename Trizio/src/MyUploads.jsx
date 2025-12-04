@@ -8,7 +8,7 @@ import axiosInstance from "./api/axiosInstance"; // <- use global axios instance
 
 // ModelPreview uses dynamic backend URL for GLB
 function ModelPreview({ id }) {
-  const glbUrl = `${import.meta.env.VITE_BACKEND_URL}/file/${id}`;
+  const glbUrl = `${import.meta.env.VITE_BACKEND_URL}/uploads/${id}`;
   const { scene } = useGLTF(glbUrl);
   return <primitive object={scene} />;
 }
@@ -66,7 +66,7 @@ function MyUploads() {
             <div className="viewer-box">
               <Canvas camera={{ position: [2, 2, 4] }}>
                 <Stage intensity={1.5} environment="city">
-                  <ModelPreview id={item._id} />
+                  <ModelPreview filename={item.filename} />
                 </Stage>
                 <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={2} />
               </Canvas>
