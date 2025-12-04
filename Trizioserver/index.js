@@ -9,7 +9,7 @@ const path = require('path');
 
 // Allow Frontend domain
 app.use(cors({
-  origin: ['http://localhost:5173'], // Change this later
+  origin: ['https://threed-model-trizio-1.onrender.com/'], // Change this later
   credentials: true,
 }));
 
