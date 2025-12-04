@@ -9,8 +9,12 @@ const path = require('path');
 
 // Allow Frontend domain
 app.use(cors({
-  origin: ['https://threed-model-trizio-1.onrender.com/'], // Change this later
+  origin: [
+    "https://threed-model-trizio-1.onrender.com",
+    "http://localhost:4000"
+  ],
   credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"]
 }));
 
 // Middlewares
@@ -25,10 +29,6 @@ app.use('/uploads', express.static(path.join(__dirname, 'Uploads')));
 // Required for Render Deployment
 const PORT = process.env.PORT || 4000;
 
-// Test Route
-app.get("/", (req, res) => {
-  res.send("Backend Working!");
-});
 
 // Start Server
 app.listen(PORT, () => {
