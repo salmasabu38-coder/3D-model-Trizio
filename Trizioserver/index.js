@@ -1,0 +1,36 @@
+const express = require('express');
+const app = express();
+const database = require('./db');
+const bodyparser = require('body-parser');
+const cors = require('cors');
+const router = require('./router');
+const path = require('path');
+
+
+// Allow Frontend domain
+app.use(cors({
+  origin: ['http://localhost:5173'], // Change this later
+  credentials: true,
+}));
+
+// Middlewares
+app.use(bodyparser.json());
+
+// Routes
+app.use('/', router);
+
+// Serve uploads publicly
+app.use('/uploads', express.static(path.join(__dirname, 'Uploads')));
+
+// Required for Render Deployment
+const PORT = process.env.PORT || 4000;
+
+// Test Route
+app.get("/", (req, res) => {
+  res.send("Backend Working!");
+});
+
+// Start Server
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});

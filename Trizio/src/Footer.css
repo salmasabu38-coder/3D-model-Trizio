@@ -1,0 +1,66 @@
+.trizio-footer {
+    background: #0d1325;
+    padding: 20px 20px 25px;
+    text-align: center;
+    color: #e0faff;
+    border-top: 2px solid #51e8ff;
+    box-shadow: 0 0 20px rgba(81, 232, 255, 0.25);
+}
+
+.footer-logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: #51e8ff;
+    text-shadow: 0 0 14px rgba(81, 232, 255, 0.8),
+        0 0 24px rgba(255, 79, 177, 0.5);
+}
+
+.footer-text {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #9bbdca;
+}
+
+.footer-links {
+    margin: 24px auto;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #ff4fb1;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+    text-shadow: 0 0 10px rgba(255, 79, 177, 0.6);
+}
+
+.footer-links a:hover {
+    color: #51e8ff;
+    border-bottom: 2px solid #51e8ff;
+    text-shadow: 0 0 14px rgba(81, 232, 255, 0.8),
+        0 0 25px rgba(255, 79, 177, 0.8);
+}
+
+.footer-copy {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #6e92a2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-logo {
+        font-size: 28px;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+}
