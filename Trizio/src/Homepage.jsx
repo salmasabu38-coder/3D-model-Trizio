@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import "./HomePage.css";
+import "./Homepage.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
